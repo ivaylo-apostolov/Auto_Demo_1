@@ -4,11 +4,12 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System.Threading;
 using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Support.UI;
 
 namespace TC_01
 {
     [TestClass]
-    public class UnitTest1
+    public class TestCases
     {
         IWebDriver driver;
 
@@ -34,9 +35,13 @@ namespace TC_01
 
             cameraButton.Click();
 
-            Thread.Sleep(1000);
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
 
-            var cameraPageHeading = driver.FindElement(By.CssSelector("h2"));
+            IWebElement cameraPageHeading = wait.Until(driver => driver.FindElement(By.CssSelector("h2")));
+
+            //Thread.Sleep(1000);
+
+            //var cameraPageHeading = driver.FindElement(By.CssSelector("h2"));
 
             string expectedHeadingText = "Cameras";
 
@@ -53,9 +58,9 @@ namespace TC_01
 
             footerContactUsButton.Click();
 
-            Thread.Sleep(1000);
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
 
-            var contactUsPageHeading = driver.FindElement(By.CssSelector("#content h1"));
+            var contactUsPageHeading = wait.Until(driver => driver.FindElement(By.CssSelector("#content h1")));
 
             string expectedHeadingText = "Contact Us";
 
@@ -71,18 +76,16 @@ namespace TC_01
             var searchTextbox = driver.FindElement(By.XPath("//*[@id='search']/input"));
 
             searchTextbox.Clear();
-            Thread.Sleep(2000);
 
             searchTextbox.SendKeys("iPhone");
-            Thread.Sleep(2000);
 
             var findButton = driver.FindElement(By.XPath("//*[@id='search']/span/button"));
 
             findButton.Click();
 
-            Thread.Sleep(2000);
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
 
-            var searchResultPage = driver.FindElement(By.PartialLinkText("iPhone"));
+            var searchResultPage = wait.Until(driver => driver.FindElement(By.PartialLinkText("iPhone")));
 
             string expectedHeadingText = "iPhone";
 
@@ -136,6 +139,50 @@ namespace TC_01
             string actualSecondItem = macBookInBasket.Text;
 
             Assert.AreEqual(expectedSecondItem, actualSecondItem);
+
+            //var addToCardMacBook = driver.FindElement(By.XPath("//*[@id='content']/div[2]/div[1]/div/div[3]/button[1]"));
+
+            //addToCardMacBook.Click();
+
+            //WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+
+            //var addToCardIPhone = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='content']/div[2]/div[2]/div/div[3]/button[1]")));
+
+            //addToCardIPhone.Click();
+
+            //var basketButton = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='cart']/button")));
+
+            //basketButton.Click();
+
+            //bool isDisplyed = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='cart']/ul/li[2]/div/table/tbody/tr[4]/td[2]")).Displayed);
+
+            //string actualItemsAndPrice = string.Empty;
+
+            //if (isDisplyed)
+            //{
+            //    var totalSum = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='cart']/ul/li[2]/div/table/tbody/tr[4]/td[2]")));
+            //    actualItemsAndPrice = totalSum.Text;
+            //}
+
+            //string expectedItemsAndPrice = "$725.20";
+
+            //Assert.AreEqual(expectedItemsAndPrice, actualItemsAndPrice);
+
+            //var iPhoneInBasket = driver.FindElement(By.XPath("//*[@id='cart']/ul/li[1]/table/tbody/tr[1]/td[2]/a"));
+
+            //string expectedFirstItem = "iPhone";
+
+            //string actualFirstItem = iPhoneInBasket.Text;
+
+            //Assert.AreEqual(expectedFirstItem, actualFirstItem);
+
+            //var macBookInBasket = driver.FindElement(By.XPath("//*[@id='cart']/ul/li[1]/table/tbody/tr[2]/td[2]/a"));
+
+            //string expectedSecondItem = "MacBook";
+
+            //string actualSecondItem = macBookInBasket.Text;
+
+            //Assert.AreEqual(expectedSecondItem, actualSecondItem);
         }
 
         [TestCategory("ContactFormTesting")]
@@ -145,8 +192,6 @@ namespace TC_01
             var footerContactUsButton = driver.FindElement(By.PartialLinkText("Contact Us"));
 
             footerContactUsButton.Click();
-
-            Thread.Sleep(1000);
 
             var yourName = driver.FindElement(By.CssSelector("#input-name"));
 
@@ -167,8 +212,6 @@ namespace TC_01
 
             submitButton.Click();
 
-            Thread.Sleep(2000);
-
             var submitPageHeading = driver.FindElement(By.CssSelector("#content h1"));
 
             string expectedHeadingText = "Contact Us";
@@ -182,18 +225,20 @@ namespace TC_01
         [TestMethod]
         public void Test06CompareTwoProducts()
         {
+            //locate compare button of first product
             var compareFirstProduct = driver.FindElement(By.XPath("//*[@id='content']/div[2]/div[1]/div/div[3]/button[3]"));
 
+            //locate first product name
             var firstProduct = driver.FindElement(By.XPath("//*[@id='content']/div[2]/div[1]/div/div[2]/h4/a"));
 
             string firstProductName = firstProduct.Text;
 
             compareFirstProduct.Click();
 
-            Thread.Sleep(3000);
-
+            //locate compare button of second product
             var compareSecondProduct = driver.FindElement(By.XPath("//*[@id='content']/div[2]/div[2]/div/div[3]/button[3]"));
 
+            //locate second product name
             var secondProduct = driver.FindElement(By.XPath("//*[@id='content']/div[2]/div[2]/div/div[2]/h4/a"));
 
             string secondProductName = secondProduct.Text;
@@ -202,8 +247,7 @@ namespace TC_01
 
             Thread.Sleep(3000);
 
-            //click on "product comparison"
-            
+            //locate on "product comparison"
             var productComparison = driver.FindElement(By.PartialLinkText("product comparison"));
 
             productComparison.Click();

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TC_01", "TC_01\TC_01.csproj", "{084444B2-369E-4C6A-9012-236CB3CA03A5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestOpencart", "TC_01\TestOpencart.csproj", "{084444B2-369E-4C6A-9012-236CB3CA03A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
