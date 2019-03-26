@@ -5,6 +5,8 @@ using OpenQA.Selenium.Chrome;
 using System.Threading;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
+using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace TC_01
 {
@@ -153,6 +155,11 @@ namespace TC_01
             //var basketButton = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='cart']/button")));
 
             //basketButton.Click();
+
+            //ReadOnlyCollection<string> windowHandles = driver.WindowHandles;
+            //string firstTab = windowHandles.First();
+            //string lastTab = windowHandles.Last();
+            //driver.SwitchTo().Window(lastTab);
 
             //bool isDisplyed = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='cart']/ul/li[2]/div/table/tbody/tr[4]/td[2]")).Displayed);
 
