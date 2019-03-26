@@ -14,6 +14,7 @@ namespace TC_01
     public class TestCases
     {
         IWebDriver driver;
+        WebDriverWait wait;
 
         [TestInitialize]
         public void TestSetup()
@@ -21,6 +22,7 @@ namespace TC_01
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl(@"https://demo.opencart.com/");
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
         }
 
         [TestCleanup]
@@ -37,13 +39,7 @@ namespace TC_01
 
             cameraButton.Click();
 
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-
             IWebElement cameraPageHeading = wait.Until(driver => driver.FindElement(By.CssSelector("h2")));
-
-            //Thread.Sleep(1000);
-
-            //var cameraPageHeading = driver.FindElement(By.CssSelector("h2"));
 
             string expectedHeadingText = "Cameras";
 
@@ -59,8 +55,6 @@ namespace TC_01
             var footerContactUsButton = driver.FindElement(By.PartialLinkText("Contact Us"));
 
             footerContactUsButton.Click();
-
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
 
             var contactUsPageHeading = wait.Until(driver => driver.FindElement(By.CssSelector("#content h1")));
 
@@ -85,8 +79,6 @@ namespace TC_01
 
             findButton.Click();
 
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-
             var searchResultPage = wait.Until(driver => driver.FindElement(By.PartialLinkText("iPhone")));
 
             string expectedHeadingText = "iPhone";
@@ -104,25 +96,29 @@ namespace TC_01
 
             addToCardMacBook.Click();
 
-            Thread.Sleep(2000);
-
-            var addToCardIPhone = driver.FindElement(By.XPath("//*[@id='content']/div[2]/div[2]/div/div[3]/button[1]"));
+            var addToCardIPhone = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='content']/div[2]/div[2]/div/div[3]/button[1]")));
 
             addToCardIPhone.Click();
 
-            Thread.Sleep(2000);
+            Thread.Sleep(1500);
 
-            var basketButton = driver.FindElement(By.XPath("//*[@id='cart']/button"));
+            var basketButton = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='cart']/button")));
 
             basketButton.Click();
 
-            Thread.Sleep(1000);
+            Thread.Sleep(1500);
 
-            var totalSum = driver.FindElement(By.XPath("//*[@id='cart']/ul/li[2]/div/table/tbody/tr[4]/td[2]"));
+            bool isDisplyed = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='cart']/ul/li[2]/div/table/tbody/tr[4]/td[2]")).Displayed);
+
+            string actualItemsAndPrice = string.Empty;
+
+            if (isDisplyed)
+            {
+                var totalSum = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='cart']/ul/li[2]/div/table/tbody/tr[4]/td[2]")));
+                actualItemsAndPrice = totalSum.Text;
+            }
 
             string expectedItemsAndPrice = "$725.20";
-
-            string actualItemsAndPrice = totalSum.Text;
 
             Assert.AreEqual(expectedItemsAndPrice, actualItemsAndPrice);
 
@@ -141,55 +137,6 @@ namespace TC_01
             string actualSecondItem = macBookInBasket.Text;
 
             Assert.AreEqual(expectedSecondItem, actualSecondItem);
-
-            //var addToCardMacBook = driver.FindElement(By.XPath("//*[@id='content']/div[2]/div[1]/div/div[3]/button[1]"));
-
-            //addToCardMacBook.Click();
-
-            //WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
-
-            //var addToCardIPhone = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='content']/div[2]/div[2]/div/div[3]/button[1]")));
-
-            //addToCardIPhone.Click();
-
-            //var basketButton = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='cart']/button")));
-
-            //basketButton.Click();
-
-            //ReadOnlyCollection<string> windowHandles = driver.WindowHandles;
-            //string firstTab = windowHandles.First();
-            //string lastTab = windowHandles.Last();
-            //driver.SwitchTo().Window(lastTab);
-
-            //bool isDisplyed = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='cart']/ul/li[2]/div/table/tbody/tr[4]/td[2]")).Displayed);
-
-            //string actualItemsAndPrice = string.Empty;
-
-            //if (isDisplyed)
-            //{
-            //    var totalSum = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='cart']/ul/li[2]/div/table/tbody/tr[4]/td[2]")));
-            //    actualItemsAndPrice = totalSum.Text;
-            //}
-
-            //string expectedItemsAndPrice = "$725.20";
-
-            //Assert.AreEqual(expectedItemsAndPrice, actualItemsAndPrice);
-
-            //var iPhoneInBasket = driver.FindElement(By.XPath("//*[@id='cart']/ul/li[1]/table/tbody/tr[1]/td[2]/a"));
-
-            //string expectedFirstItem = "iPhone";
-
-            //string actualFirstItem = iPhoneInBasket.Text;
-
-            //Assert.AreEqual(expectedFirstItem, actualFirstItem);
-
-            //var macBookInBasket = driver.FindElement(By.XPath("//*[@id='cart']/ul/li[1]/table/tbody/tr[2]/td[2]/a"));
-
-            //string expectedSecondItem = "MacBook";
-
-            //string actualSecondItem = macBookInBasket.Text;
-
-            //Assert.AreEqual(expectedSecondItem, actualSecondItem);
         }
 
         [TestCategory("ContactFormTesting")]
