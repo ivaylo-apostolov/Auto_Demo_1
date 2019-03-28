@@ -156,11 +156,10 @@
   },
   "libraries": {
     "MSTest.TestAdapter/1.4.0": {
-      "sha512": "t2/rL9DG+cVAgPs98OGm2sbZ4FTgn+MGEan5P9NRAgqMV3+nYRKG7/5R0jY7lBMq9ISms+84MSqTHWs6QnPt4A==",
+      "sha512": "b+P6+3xNc+01LRCcBryQDRfICAy3flMQwCy75TUTOFKAlr7nxBw3waI882VGFn8X8sG90jaOHGGHi8gN+Ycq1Q==",
       "type": "package",
       "path": "mstest.testadapter/1.4.0",
       "files": [
-        ".nupkg.metadata",
         ".signature.p7s",
         "build/_common/Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll",
         "build/_common/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll",
@@ -217,11 +216,10 @@
       ]
     },
     "MSTest.TestFramework/1.4.0": {
-      "sha512": "kV/yZ0XLiOElsVeLT0GnNrsoKcPvVNOP6Cv2zkAiceJY0rpro0L+3t54bRApLwTg1mxlo4rLziBG7X6X69KcrQ==",
+      "sha512": "WZqerw21E5n6uyXA5xfguPH2VvuB5Ek6OWZaZXV6Bwe5xUYgRdpf4RzB/1vg7tQM2KEe5z6txfgPI/+rIJ3h1g==",
       "type": "package",
       "path": "mstest.testframework/1.4.0",
       "files": [
-        ".nupkg.metadata",
         ".signature.p7s",
         "lib/net45/Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.XML",
         "lib/net45/Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll",
@@ -318,11 +316,10 @@
       ]
     },
     "Selenium.WebDriver/3.141.0": {
-      "sha512": "wPqzXO3f79DzqauTZSzLMKiaBCN0Z2Mv7KvWP+hnV6EL88zh/pJJnFtdIR1X5wa3hsTOpF/bBJs45rz7kArsiA==",
+      "sha512": "ymXPJ9zp7KPIV0H6DdI3boIwc46LrEW1T653Ow6OsRbMFgyDcqRCX8JOeYLm68jIq+7rgECLLUXxmAit5TP/Iw==",
       "type": "package",
       "path": "selenium.webdriver/3.141.0",
       "files": [
-        ".nupkg.metadata",
         ".signature.p7s",
         "lib/net35/WebDriver.dll",
         "lib/net35/WebDriver.xml",
@@ -337,11 +334,10 @@
       ]
     },
     "Selenium.WebDriver.ChromeDriver/73.0.3683.68": {
-      "sha512": "DyCls7kkAkAUxDiG7e/yJNSx9OfeU+Rv5Ga/ypQ0xYUCxlv4sKkf1mMkF3nRGEn8K3YBLgSbTUOlNThv0D0XqA==",
+      "sha512": "247RDH5/2Kx1VmjtRnw53GJDlhWNUoDOS6KSzouklvdKon9q+3QM++TcuGRQaFRevy5D/q2JozmXCPhwwKeoUw==",
       "type": "package",
       "path": "selenium.webdriver.chromedriver/73.0.3683.68",
       "files": [
-        ".nupkg.metadata",
         ".signature.p7s",
         "build/Selenium.WebDriver.ChromeDriver.targets",
         "driver/linux64/chromedriver",
@@ -361,26 +357,21 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\iapostc\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {}
+    "C:\\Users\\Ivaylo Apostolov\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\iapostc\\Demo\\Auto_Demo_1\\TC_01\\TC_01\\TestOpencart.csproj",
+      "projectUniqueName": "D:\\Ivo\\SoftServe\\QA Academy\\AUTOMATION\\Auto_Demo_1\\TC_01\\TC_01\\TestOpencart.csproj",
       "projectName": "TestOpencart",
-      "projectPath": "C:\\Users\\iapostc\\Demo\\Auto_Demo_1\\TC_01\\TC_01\\TestOpencart.csproj",
-      "packagesPath": "C:\\Users\\iapostc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\iapostc\\Demo\\Auto_Demo_1\\TC_01\\TC_01\\obj\\",
+      "projectPath": "D:\\Ivo\\SoftServe\\QA Academy\\AUTOMATION\\Auto_Demo_1\\TC_01\\TC_01\\TestOpencart.csproj",
+      "packagesPath": "C:\\Users\\Ivaylo Apostolov\\.nuget\\packages\\",
+      "outputPath": "D:\\Ivo\\SoftServe\\QA Academy\\AUTOMATION\\Auto_Demo_1\\TC_01\\TC_01\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\iapostc\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+        "C:\\Users\\Ivaylo Apostolov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net45"

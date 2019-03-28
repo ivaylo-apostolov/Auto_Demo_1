@@ -6,9 +6,6 @@ D:\Ivo\SoftServe\QA Academy\AUTOMATION\Auto_Demo_1\TC_01\TC_01\bin\Debug\TC_01.p
 D:\Ivo\SoftServe\QA Academy\AUTOMATION\Auto_Demo_1\TC_01\TC_01\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
 D:\Ivo\SoftServe\QA Academy\AUTOMATION\Auto_Demo_1\TC_01\TC_01\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
 D:\Ivo\SoftServe\QA Academy\AUTOMATION\Auto_Demo_1\TC_01\TC_01\bin\Debug\WebDriver.dll
-D:\Ivo\SoftServe\QA Academy\AUTOMATION\Auto_Demo_1\TC_01\TC_01\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
-D:\Ivo\SoftServe\QA Academy\AUTOMATION\Auto_Demo_1\TC_01\TC_01\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
-D:\Ivo\SoftServe\QA Academy\AUTOMATION\Auto_Demo_1\TC_01\TC_01\bin\Debug\WebDriver.xml
 D:\Ivo\SoftServe\QA Academy\AUTOMATION\Auto_Demo_1\TC_01\TC_01\obj\Debug\TestOpencart.csprojAssemblyReference.cache
 D:\Ivo\SoftServe\QA Academy\AUTOMATION\Auto_Demo_1\TC_01\TC_01\obj\Debug\TestOpencart.csproj.CoreCompileInputs.cache
 D:\Ivo\SoftServe\QA Academy\AUTOMATION\Auto_Demo_1\TC_01\TC_01\obj\Debug\TestOpencart.csproj.CopyComplete
