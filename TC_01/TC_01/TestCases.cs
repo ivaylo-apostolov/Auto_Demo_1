@@ -3,10 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System.Threading;
-using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
-using System.Collections.ObjectModel;
-using System.Linq;
 
 namespace TC_01
 {
@@ -91,6 +88,8 @@ namespace TC_01
 
             basketButton.Click();
 
+            Thread.Sleep(1500);
+
             bool isDisplyed = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='cart']/ul/li[2]/div/table/tbody/tr[4]/td[2]")).Displayed);
 
             string actualItemsAndPrice = string.Empty;
@@ -100,6 +99,10 @@ namespace TC_01
                 var totalSum = wait.Until(driver => driver.FindElement(By.XPath("//*[@id='cart']/ul/li[2]/div/table/tbody/tr[4]/td[2]")));
                 actualItemsAndPrice = totalSum.Text;
             }
+            //else
+            //{
+            //    throw
+            //}
 
             string expectedItemsAndPrice = "$725.20";
 
